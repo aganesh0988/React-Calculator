@@ -1,8 +1,8 @@
 import React from "react";
 
 class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       result: 0,
       num1: '',
@@ -48,11 +48,12 @@ class Calculator extends React.Component {
   }
 
   render() {
+    const { num1, num2, result } = this.state;
     return (
       <div>
-        <h1>Result: {this.state.result}</h1>
-        <input onChange={this.handleFirstNum} value={this.state.num1} placeholder="First number" />
-        <input onChange={this.handleSecondNum} value={this.state.num2} placeholder="Second number" />
+        <h1>Result: {result}</h1>
+        <input onChange={this.handleFirstNum} value={num1} placeholder="First number" />
+        <input onChange={this.handleSecondNum} value={num2} placeholder="Second number" />
         <button onClick={this.adding}>Add</button>
         <button onClick={this.subtracting}>Subtract</button>
         <button onClick={this.multiplying}>Multiply</button>
